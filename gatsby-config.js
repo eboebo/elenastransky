@@ -3,17 +3,36 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Elena`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Elena Stransky`,
+    author: "Elena Stransky",
+    description: "Elena Stransky's Portfolio Website",
+    siteUrl: `https://www.elenastransky.com`
   },
-  plugins: [{
+  plugins: [
+    "gatsby-plugin-image", 
+    "gatsby-plugin-sharp", 
+    "gatsby-transformer-sharp", 
+    "gatsby-plugin-postcss", 
+    "gatsby-plugin-sitemap", 
+    {
     resolve: 'gatsby-source-contentful',
     options: {
+      "spaceId": "mem6wwtvk2ex",
       "accessToken": "q84d54z4Z9990tHL1MtIbMWVRQqY6ZE5PoOfm9US7tA",
-      "spaceId": "mem6wwtvk2ex"
     }
-  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-postcss", "gatsby-plugin-google-gtag", "gatsby-plugin-sitemap", {
+  }, 
+  {
+    resolve: `gatsby-plugin-google-fonts`,
+    options: {
+      fonts: [
+        `neuton`,
+      ],
+      display: 'swap'
+    }
+  },
+  {
     resolve: 'gatsby-source-filesystem',
+    
     options: {
       "name": "images",
       "path": "./src/images/"
